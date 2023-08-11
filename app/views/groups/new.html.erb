@@ -1,14 +1,35 @@
-<div id="groups-new">
-    <%= form_with model: Group.new, url: groups_path(current_user) do |form| %>
-        <div id="div">
-            <%= form.text_field :name, placeholder: "Name"%>
-        </div>
-        <div>
-            <%= form.label :icon, "Choose Image:" %>
-            <%= form.file_field :icon %>
-        </div>
-        <div id="actions">
-            <%= form.submit "Save", id: "button"%>
-        </div>
-    <% end %>
-<div>
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag 'groups/new' %>
+</head>
+<body>
+
+  <header>
+      <div>
+          <%= link_to image_tag('back.png'), groups_path, id: "back-icon" %>
+      </div>
+      <h2>
+        CATEGORIES
+      </h2>
+      <div>
+          <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+      </div>
+  </header>
+
+  <%= form_for(Group.new, url: groups_path) do |f| %>
+    <div class="field">
+      <%= f.text_field :name, autocomplete: "name" , placeholder: "Name" %>
+    </div>
+  
+    <div class="field">
+      <%= f.file_field :icon %>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit "Create Group" %>
+    </div>
+  <% end %>
+  
+</body>
+</html>

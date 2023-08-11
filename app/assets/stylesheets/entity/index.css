@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root {
+  --blue: #3778c2;
+  --green: #5fb523;
+  --black: #434b54;
+  --white: #ffff;
+  --bg: #ebebeb;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ebebeb;
+}
+
+footer a{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    bottom: 0;
+    background-color: var(--green);
+    width: 100vw;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.transaction-container{
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90vw;
+    background-color: var(--white);
+    height: 10vh;
+    margin-top: 5px;
+}
+
+.total-payment{
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90vw;
+    height: 40px;
+    background-color: var(--white); 
+    margin-top: 5px;
+}
+
+#category-info{
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    width: 90vw;
+    height: 10vh;
+    background-color: var(--white); 
+    margin-top: 8px;
+}
+
+.icons{
+    height: 10vh;
+}

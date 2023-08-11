@@ -1,3 +1,15 @@
+<header>
+    <div>
+    <%= link_to image_tag('back.png'), groups_path, id: "back-icon" %>
+    </div>
+        <h2>
+            TRANSACTIONS
+        </h2>
+    <div>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+    </div>
+</header>
+
 <div id="expenses-new">
     <%= form_with model: Expense.new, url: group_expenses_path(current_user) do |form| %>
         <div>
