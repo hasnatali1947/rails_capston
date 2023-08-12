@@ -23,19 +23,18 @@ RSpec.describe 'Groups', type: :feature do
       expect(page).to have_content(@user.expenses.sum(:amount))
     end
   end
-    describe 'new group page' do
-      scenario 'should have a new group page' do
-        visit new_group_path
-        expect(page).to have_content('CATEGORIES')
-      end
-      scenario 'should have the name of the group' do
-        visit groups_path
-        expect(page).to have_content(@group.name)
-      end
-      scenario 'when a user clicks save button with valid data it will redirect to group page' do
-        visit new_group_path
-        fill_in 'Name', with: 'Test group'
-  
+  describe 'new group page' do
+    scenario 'should have a new group page' do
+      visit new_group_path
+      expect(page).to have_content('CATEGORIES')
+    end
+    scenario 'should have the name of the group' do
+      visit groups_path
+      expect(page).to have_content(@group.name)
+    end
+    scenario 'when a user clicks save button with valid data it will redirect to group page' do
+      visit new_group_path
+      fill_in 'Name', with: 'Test group'
     end
   end
 end

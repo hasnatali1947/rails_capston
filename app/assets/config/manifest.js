@@ -5,4 +5,4 @@
 //= link home/index.css
 //= link groups/index.css
 //= link groups/new.css
-//= link entity/index.css
+//= link expense/index.css

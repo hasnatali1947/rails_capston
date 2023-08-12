@@ -18,10 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-header h2 {
-  font-weight: 500;
+  background-color: #ebebeb;
 }
 
 footer a {
@@ -31,32 +28,44 @@ footer a {
   align-items: center;
   height: 60px;
   bottom: 0;
-  left: 0;
   background-color: var(--green);
   width: 100vw;
   text-decoration: none;
   color: var(--white);
 }
 
-.group-container {
+.transaction-container {
+  padding: 5px 10px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  width: 90vw;
+  background-color: var(--white);
+  height: 10vh;
+  margin-top: 5px;
+}
+
+.total-payment {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90vw;
+  height: 40px;
+  background-color: var(--white);
+  margin-top: 5px;
+}
+
+#category-info {
+  padding: 5px 10px;
+  display: flex;
   align-items: center;
   width: 90vw;
-  padding: 5px 10px;
-  background-color: var(--white);
-  margin-top: 10px;
-}
-
-.name-icon-container {
-  display: flex;
-  text-decoration: none;
-}
-
-.group-icon {
   height: 10vh;
+  background-color: var(--white);
+  margin-top: 8px;
 }
 
-.no-decoration {
-  text-decoration: none;
+.icons {
+  height: 10vh;
 }

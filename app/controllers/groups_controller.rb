@@ -14,8 +14,7 @@ class GroupsController < ApplicationController
     end
   end
 
-  def login_page
-  end
+  def login_page; end
 
   private
 

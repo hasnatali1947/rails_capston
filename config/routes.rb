@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   resources :groups, only: [:index, :new, :create] do
     resources :expenses, only: [:index, :new, :create]
   end
-
 end
