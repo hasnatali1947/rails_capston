@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag 'groups/index' %>
+</head>
+<body>
+<header class="fixed" >
+    <div>
+        <%= image_tag 'menu.png', id: "menu-icon" %>
+    </div>
+    <h2>
+        Categories
+    </h2>
+    <div>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+    </div>
+</header>
+
+<div id="group">
+    <ul>
+        <% @groups.each do |group| %>
+            <%= link_to group_expenses_path(group_id: group.id), class: "no-decoration" do %>
+                <li class="group-container">
+                    <div class="name-icon-container">
+                        <%= image_tag url_for(group.icon), alt: "group icon", class: "group-icon" %>
+                        <h3 class="no-decoration">
+                            <%= group.name %>
+                        </h3>
+                    </div>
+                    <h3 class="no-decoration">
+                        $<%= Expense.where(groups_id: group.id).sum(:amount) %>
+                    </h3>
+                </li>
+            <% end %>
+        <% end %>
+    </ul>
+
+    <footer>
+        <%= link_to "ADD A NEW CATEGORY", new_group_path %>  
+    </footer>
+</body>
+</html>
