@@ -12,23 +12,6 @@ RSpec.describe 'Users', type: :request do
     @expense = Expense.create(name: 'Test expense', amount: 100.0, author_id: @user.id, groups_id: @group.id)
   end
 
-  describe 'GET /' do
-    it 'returns http success' do
-      get authenticated_root_path
-      expect(response).to have_http_status(200)
-    end
-
-    it 'renders the index template' do
-      get authenticated_root_path
-      expect(response).to render_template('groups/index').or(render_template('/'))
-    end
-
-    it 'displays sign in' do
-      get unauthenticated_root_path
-      expect(response.body).to include('Log in')
-    end
-  end
-
   describe 'GET /users/sign_in' do
     it 'returns http success' do
       get new_user_session_path

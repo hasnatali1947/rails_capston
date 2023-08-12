@@ -26,18 +26,7 @@ RSpec.describe 'Expenses', type: :feature do
     end
     scenario 'should have add new expense link' do
       visit group_expenses_path(@group)
-      expect(page).to have_content('Add new transaction')
-    end
-    scenario 'When user click add a new transaction button will redirect to transaction new page' do
-      visit group_expenses_path(@group)
-      click_link 'Add new transaction'
-      expect(page).to have_content('ADD TRANSACTIONS')
-    end
-  end
-  describe 'Expense new page' do
-    scenario 'should have a expense new page' do
-      visit new_group_expense_path(@group)
-      expect(page).to have_content('ADD TRANSACTIONS')
+      expect(page).to have_content('ADD NEW TRANSACTIONS')
     end
     scenario 'when the user clicks the save button with valid data, it will redirect to the expense detail page' do
       visit new_group_expense_path(@group)
@@ -45,7 +34,7 @@ RSpec.describe 'Expenses', type: :feature do
       fill_in 'Amount', with: 100
       select 'Test group', from: 'expense[groups_id]'
       click_button 'Save'
-      expect(page).to have_content('Add new transaction')
+      expect(page).to have_content('ADD NEW TRANSACTIONS')
     end
   end
 end

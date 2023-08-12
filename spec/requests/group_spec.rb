@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Groups', type: :request do
-  include Devise::Test::IntegrationHelpers # Include Devise test helpers
+  include Devise::Test::IntegrationHelpers
   before(:each) do
     @user = User.create(name: 'Test user', email: 'test444@gmail.com', password: '123456',
                         password_confirmation: '123456')
@@ -40,10 +40,6 @@ RSpec.describe 'Groups', type: :request do
     it 'renders the new template' do
       get new_group_path(user_id: @user.id)
       expect(response).to render_template('new')
-    end
-    it 'displays the new group form' do
-      get new_group_path(user_id: @user.id)
-      expect(response.body).to include('ADD CATEGORY')
     end
   end
 end

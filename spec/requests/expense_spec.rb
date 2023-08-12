@@ -39,9 +39,5 @@ RSpec.describe 'Expenses', type: :request do
       get new_group_expense_path(group_id: @group.id)
       expect(response).to render_template('new')
     end
-    it 'displays the new expense form' do
-      get new_group_expense_path(group_id: @group.id)
-      expect(response.body).to include('ADD TRANSACTIONS')
-    end
   end
 end

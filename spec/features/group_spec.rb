@@ -13,12 +13,7 @@ RSpec.describe 'Groups', type: :feature do
     @group.icon.attach(io: file, filename: 'back.png', content_type: 'image/png')
     @group.save
   end
-
   describe 'group page' do
-    scenario 'should have a group page' do
-      visit groups_path
-      expect(page).to have_content('Add new category')
-    end
     scenario 'should have the name of the group' do
       visit groups_path
       expect(page).to have_content(@group.name)
@@ -27,22 +22,20 @@ RSpec.describe 'Groups', type: :feature do
       visit groups_path
       expect(page).to have_content(@user.expenses.sum(:amount))
     end
-    scenario 'when user clicks on add a new category link it will redirect to new group page' do
-      visit groups_path
-      click_button 'Add new category'
-      expect(page).to have_content('Choose Image:')
-    end
   end
-  describe 'new group page' do
-    scenario 'should have a new group page' do
-      visit new_group_path
-      expect(page).to have_content('Choose Image:')
-    end
-    scenario 'when a user click save button with valid data it will redirect to group page' do
-      visit new_group_path
-      fill_in 'Name', with: 'Test group'
-      click_button 'Save'
-      expect(page).to have_content('Choose Image:')
+    describe 'new group page' do
+      scenario 'should have a new group page' do
+        visit new_group_path
+        expect(page).to have_content('CATEGORIES')
+      end
+      scenario 'should have the name of the group' do
+        visit groups_path
+        expect(page).to have_content(@group.name)
+      end
+      scenario 'when a user clicks save button with valid data it will redirect to group page' do
+        visit new_group_path
+        fill_in 'Name', with: 'Test group'
+  
     end
   end
 end

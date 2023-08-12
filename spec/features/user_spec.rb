@@ -1,18 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :feature do
-  before(:each) do
-    @user = User.create(name: 'Test user', email: 'test444@gmail.com', password: '123456',
-                        password_confirmation: '123456')
-  end
   describe 'sign in page' do
-    scenario 'should have a sign in page' do
+    scenario 'redirects to the groups path after sign in' do
+      user = FactoryBot.create(:user)
       visit new_user_session_path
-      expect(page).to have_content('Log in')
-    end
-    scenario 'should have a sign in button' do
-      visit new_user_session_path
-      expect(page).to have_content('Log in')
+
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
+      click_button 'Log in'
+
+      expect(current_path).to eq(groups_path)
     end
     scenario 'should have a sign up link' do
       visit new_user_session_path
