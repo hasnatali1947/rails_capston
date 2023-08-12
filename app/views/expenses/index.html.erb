@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%= stylesheet_link_tag 'expense/index' %>
+</head>
+<body>
+  <header class="fixed">
+    <div>
+        <%= link_to image_tag('back.png'), groups_path, id: "back-icon" %>
+    </div>
+    <h2>
+      TRANSACTIONS
+    </h2>
+    <div>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+    </div>
+  </header>
+
+<div id="entities">
+   
+  <div id="expenses">
+    <div id="category-info">
+      <%= image_tag url_for(@group.icon), alt: "category icon", class: "icons" %>
+      <h2> <%= @group.name %> </h2>
+    </div>
+    <ul class="entities-container">
+    <% @expenses.each do |expense| %>
+      <li class="transaction-container">
+        <div class="name-calender">
+          <h2>
+            <%= expense.name %>
+          </h2>
+          <h3>
+            <%= image_tag('calendar.png') %> <%= expense.created_at %>
+          </h3>
+        </div>
+        <div>
+          <h3>
+            amount: $<%= expense.amount %>
+          </h3>
+        </div>
+      </li>
+      <div class="total-payment">
+      <h3>TOTAL PAYMENT</h3>
+      <h3>
+        <% if @expenses.present? %>
+          $ <%= @expenses.sum { |entity| entity.amount } %>
+        <% else %>
+          $ 0
+        <% end %>
+      </h3>
+    </div>
+    <% end %>
+  </ul>
+  
+  </div>
+  </div>
+  
+  <footer class="transation-btn">
+  <%= link_to({ controller: 'expenses', action: 'new' }) do %>
+    <button style="
+    border: none;
+    background: #5fb523;
+    color: #ffff;
+">ADD NEW TRANSACTIONS</button>
+    <%end%>
+    </footer>
+</body>
+</html>
