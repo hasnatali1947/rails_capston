@@ -41,7 +41,7 @@
 
 ## Live Demo <a name="live-demo"></a>
 
-  - <a href="https://hasnatali1947.github.io/rails_capston/">Live Link</a>
+  - <a href="https://rails-capston-web-service.onrender.com">Live Link</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
