@@ -1,18 +1,18 @@
 databases:
-  - name: Budget-App
-    databaseName: budget_app_ha7s
-    user: budget_app_ha7s_user
+  - name: rails_capston_database
+    databaseName: rails_capston_database
+    user: rails_capston_database_user
 
 services:
   - type: web
-    name: Budget-app
-    env: ruby
+    name: rails_capston_web_service
+    runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: Budget-App
+          name: rails_capston_database
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
