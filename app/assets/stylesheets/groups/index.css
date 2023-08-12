@@ -50,13 +50,16 @@ footer a {
 
 .name-icon-container {
   display: flex;
-  text-decoration: none;
 }
 
 .group-icon {
-  height: 10vh;
+  border-radius: 5px;
+  width: 80px;
+  height: 80px;
 }
 
 .no-decoration {
+  font-weight: 400;
   text-decoration: none;
+  color: var(--black);
 }

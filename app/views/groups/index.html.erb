@@ -19,7 +19,7 @@
 <div id="group">
     <ul>
         <% @groups.each do |group| %>
-            <%= link_to group_expenses_path(group_id: group.id) do %>
+            <%= link_to group_expenses_path(group_id: group.id), class: "no-decoration" do %>
                 <li class="group-container">
                     <div class="name-icon-container">
                         <%= image_tag url_for(group.icon), alt: "group icon", class: "group-icon" %>

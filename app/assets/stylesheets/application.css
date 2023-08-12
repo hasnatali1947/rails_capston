@@ -34,12 +34,11 @@ header button {
   border: none;
   padding: 10px;
   cursor: pointer;
-  font-size: large;
 }
 
 .header h2 {
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 form {
@@ -81,4 +80,8 @@ form a {
 .transation-btn {
   display: flex;
   margin-right: 201vh;
+}
+
+.no-decoration {
+  text-decoration: none;
 }

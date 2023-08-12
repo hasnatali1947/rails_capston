@@ -21,6 +21,10 @@ body {
   background-color: #ebebeb;
 }
 
+header h2 {
+  font-weight: 500;
+}
+
 footer a {
   position: fixed;
   display: flex;
@@ -28,6 +32,7 @@ footer a {
   align-items: center;
   height: 60px;
   bottom: 0;
+  left: 0;
   background-color: var(--green);
   width: 100vw;
   text-decoration: none;
@@ -67,5 +72,17 @@ footer a {
 }
 
 .icons {
-  height: 10vh;
+  border-radius: 5px;
+  width: 80px;
+  height: 80px;
+}
+
+.cal-date {
+  display: flex;
+  color: var(--black);
+}
+
+.cal-date img {
+  width: 20px;
+  height: 20px;
 }

@@ -21,23 +21,24 @@
   <div id="expenses">
     <div id="category-info">
       <%= image_tag url_for(@group.icon), alt: "category icon", class: "icons" %>
-      <h2> <%= @group.name %> </h2>
+      <h2 style="font-weight:400;"> <%= @group.name %> </h2>
     </div>
     <ul class="entities-container">
     <% @expenses.each do |expense| %>
       <li class="transaction-container">
         <div class="name-calender">
-          <h2>
+          <h4>
             <%= expense.name %>
-          </h2>
-          <h3>
-            <%= image_tag('calendar.png') %> <%= expense.created_at %>
-          </h3>
+          </h4>
+          <span class="cal-date">
+          <%= image_tag('calendar.png') %> 
+          <h5> <%= expense.created_at %> </h5>
+          </span>
         </div>
         <div>
-          <h3>
+          <h4>
             amount: $<%= expense.amount %>
-          </h3>
+          </h4>
         </div>
       </li>
       
