@@ -98,6 +98,7 @@ To test the web app run the following command:
 👤 **Hasnat Ali**
 
 - GitHub: [Hasnat Ali](https://github.com/hasnatali1947)
+
 - LinkedIn: [ikenna_richard](https://www.linkedin.com/in/hasnattali/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
